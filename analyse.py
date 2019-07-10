@@ -65,6 +65,7 @@ if analyseOutput:
   print "prof-ipolhistos --datadir . --runs runcombs_A14-CR1.dat --mcdir mcruns_A14-CR1/mc --weights "+weights+" --ipol=linear --ipoldir=out_A14-CR1"+weights.replace("weights","")+"/ipol/ --outdir=out_A14-CR1"+weights.replace("weights","")+" --params=ColourReconnection:mode=1"
   print "prof-ipolhistos --datadir . --runs runcombs_A14-CR2.dat --mcdir mcruns_A14-CR2/mc --weights "+weights+" --ipol=linear --ipoldir=out_A14-CR2"+weights.replace("weights","")+"/ipol/ --outdir=out_A14-CR2"+weights.replace("weights","")+" --params=ColourReconnection:mode=2"
   print "prof-ipolhistos --datadir . --runs runcombs_default.dat --mcdir mcruns_default/mc --weights "+weights+" --ipol=linear --ipoldir=out_default"+weights.replace("weights","")+"/ipol/ --outdir=out_default"+weights.replace("weights","")+" --params=ColourReconnection:mode=0"
+  
   print "python renormalize.py out_CP1"+weights.replace("weights","")+"/ipolhistos/000/histo-000.yoda"
   print "python renormalize.py out_CP5"+weights.replace("weights","")+"/ipolhistos/000/histo-000.yoda"
   print "python renormalize.py out_CP5-CR1"+weights.replace("weights","")+"/ipolhistos/000/histo-000.yoda"

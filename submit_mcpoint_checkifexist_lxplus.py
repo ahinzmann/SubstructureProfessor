@@ -104,6 +104,7 @@ class LXBATCHCommandBuilder(CommandBuilder):
       infile += 'output                = '+fulldir+"/"+submitname+'.$(ClusterId).$(ProcId).out\n'
       infile += 'error                 = '+fulldir+"/"+submitname+'.$(ClusterId).$(ProcId).err\n'
       infile += 'log                   = '+fulldir+"/"+submitname+'.$(ClusterId).log\n'
+      infile += '+JobFlavour           = '+self._que+'\n'
       infile += 'queue\n'
       submit.write(infile)
       submit.close()

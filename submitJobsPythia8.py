@@ -36,10 +36,10 @@ if True:
       #" -T ZJets-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"
   for tune,number in scenarios:
     name=tune+version
-    print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q 1nw --directory mcruns_"+name+"/mc -c FlatQCD-TuneCP5-Pythia8-8000GeV_cfg_"+tune+".py"
-    print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q 1nw --directory mcruns_"+name+"/mc -c FlatQCD-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"
-    print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q 1nw --directory mcruns_"+name+"/mc -c FlatQCD-TuneCP5-Pythia8-13000GeV_cfg_"+tune+".py"
-    print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q 1nw --directory mcruns_"+name+"/mc -c TTbar-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"
-    print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q 1nw --directory mcruns_"+name+"/mc -c TTbar-TuneCP5-Pythia8-13000GeV_cfg_"+tune+".py"
-    #print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q 1nw --directory mcruns_"+name+"/mc -c WJets-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"
-    #print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q 1nw --directory mcruns_"+name+"/mc -c ZJets-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"
+    print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q nextweek --directory mcruns_"+name+"/mc -c FlatQCD-TuneCP5-Pythia8-8000GeV_cfg_"+tune+".py"
+    print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q nextweek --directory mcruns_"+name+"/mc -c FlatQCD-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"
+    print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q nextweek --directory mcruns_"+name+"/mc -c FlatQCD-TuneCP5-Pythia8-13000GeV_cfg_"+tune+".py"
+    print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q nextweek --directory mcruns_"+name+"/mc -c TTbar-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"
+    print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q nextweek --directory mcruns_"+name+"/mc -c TTbar-TuneCP5-Pythia8-13000GeV_cfg_"+tune+".py"
+    #print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q nextweek --directory mcruns_"+name+"/mc -c WJets-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"
+    #print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q nextweek --directory mcruns_"+name+"/mc -c ZJets-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"

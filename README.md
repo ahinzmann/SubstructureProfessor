@@ -8,6 +8,12 @@ Setup your own fork of the Rivet GitLab repository:
 * Go to https://gitlab.cern.ch/cms-gen/Rivet and press the fork button
 * Then install CMSSW, Rivet and compile (see also README.md in repository):
 
+export SCRAM_ARCH=slc7_amd64_gcc630
+
+export VO_CMS_SW_DIR=/cvmfs/cms.cern.ch
+
+source $VO_CMS_SW_DIR/cmsset_default.sh
+
 cmsrel CMSSW_10_0_0
 
 cd CMSSW_10_0_0/src

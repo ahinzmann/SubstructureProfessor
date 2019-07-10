@@ -95,8 +95,19 @@ class LXBATCHCommandBuilder(CommandBuilder):
       infile += 'ls\n'
       script.write(infile)
       script.close()
+      submitname="bjob_"+self._name+"_"+self._yodaout.strip(".yoda")+".sub"
+      submit = open(fulldir+"/"+submitname, "w")
+      infile=''
+      infile += 'executable            = '+fulldir+"/"+scriptname+'\n'
+      infile += 'arguments             = $(ClusterID) $(ProcId)\n'
+      infile += 'output                = '+fulldir+"/"+submitname+'.$(ClusterId).$(ProcId).out\n'
+      infile += 'error                 = '+fulldir+"/"+submitname+'.$(ClusterId).$(ProcId).err\n'
+      infile += 'log                   = '+fulldir+"/"+submitname+'.$(ClusterId).log\n'
+      infile += 'queue\n'
+      submit.write(infile)
+      submit.close()
       print "Run " + self._name + ":   "
-      os.system('cd '+fulldir+';chmod u+x ' + scriptname+'; bsub -q '+self._que+' -J '+self._directory+self._name+' '+scriptname)
+      os.system('cd '+fulldir+';chmod u+x ' + scriptname+'; condor_submit '+submitname)
     except Exception, e:
       print "%s" % str(e) 
       ask_ok('Continue script? (y/n)');

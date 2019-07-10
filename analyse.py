@@ -14,52 +14,26 @@ scenarios=[#("CP1",2),
 	   ("default",2),
 	   ]
 	   
-runJobs=False
-doYoda=False
+doYoda=True
 analyseOutput=True
 
 version=""
-weights="weightsQCD"
-#weights="weightsSelected"
-
-if runJobs:
-  print "sed -i -e 's/2.5.2-njopjo\"/2.5.2\"/g' /afs/cern.ch/user/h/hinzmann/stable_13TeV/Rivet/CMSSW_9_2_6/config/toolbox/slc6_amd64_gcc530/tools/selected/rivet.xml"
-  print "scram setup rivet"
-  for tune,number in scenarios:
-    name=tune+version
-    if name=="FSR" or "All" in name:
-      scan=""
-    else:
-      scan="--scan"
-    print "prof-sampleparams generatorP8"+tune+".ranges "+scan+" --include-corners --num-runs "+str(number)+" --seed 1 -o mcruns_"+name+\
-      " -T FlatQCD-TuneCP5-Pythia8-8000GeV_cfg_"+tune+".py"+\
-      " -T FlatQCD-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"+\
-      " -T FlatQCD-TuneCP5-Pythia8-13000GeV_cfg_"+tune+".py"+\
-      " -T TTbar-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"+\
-      " -T TTbar-TuneCP5-Pythia8-13000GeV_cfg_"+tune+".py"
-      # -T WJets-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"+
-      #" -T ZJets-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"
-  for tune,number in scenarios:
-    name=tune+version
-    print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q 1nw --directory mcruns_"+name+"/mc -c FlatQCD-TuneCP5-Pythia8-8000GeV_cfg_"+tune+".py"
-    print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q 1nw --directory mcruns_"+name+"/mc -c FlatQCD-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"
-    print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q 1nw --directory mcruns_"+name+"/mc -c FlatQCD-TuneCP5-Pythia8-13000GeV_cfg_"+tune+".py"
-    #print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q 1nw --directory mcruns_"+name+"/mc -c WJets-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"
-    #print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q 1nw --directory mcruns_"+name+"/mc -c ZJets-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"
-    print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q 1nw --directory mcruns_"+name+"/mc -c TTbar-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"
-    print "python submit_mcpoint_checkifexist_lxplus.py --runs 0-"+str(number-1)+" -q 1nw --directory mcruns_"+name+"/mc -c TTbar-TuneCP5-Pythia8-13000GeV_cfg_"+tune+".py"
+weights="weightsSelected"
 
 if doYoda:
-  print "sed -i -e 's/2.5.2\"/2.5.2-njopjo\"/g' /afs/cern.ch/user/h/hinzmann/stable_13TeV/Rivet/CMSSW_9_2_6/config/toolbox/slc6_amd64_gcc530/tools/selected/rivet.xml"
-  print "scram setup rivet"
-  print "ln -s ../GeneratorInterface/RivetInterface/data ref"
   for tune,number in scenarios:
     name=tune+version
     print "./YodaConvert.sh mcruns_"+name
     print "rm mcruns_"+name+"/mc/*/*.yoda"
-    print "prof-runcombs --mc mcruns_"+name+"/mc -c 0:1 -o runcombs_"+name+".dat --weights "+weights
  
 if analyseOutput:
+  #print "sed -i -e 's/2.5.2\"/2.5.2-njopjo\"/g' /afs/cern.ch/user/h/hinzmann/stable_13TeV/Rivet/CMSSW_9_2_6/config/toolbox/slc6_amd64_gcc530/tools/selected/rivet.xml"
+  #print "scram setup rivet"
+  print "ln -s ../GeneratorInterface/RivetInterface/data ref"
+  for tune,number in scenarios:
+    name=tune+version
+    print "prof-runcombs --mc mcruns_"+name+"/mc -c 0:1 -o runcombs_"+name+".dat --weights "+weights
+
   for tune,number in scenarios:
     name=tune+version
     outname=tune+version+weights.replace("weights","")

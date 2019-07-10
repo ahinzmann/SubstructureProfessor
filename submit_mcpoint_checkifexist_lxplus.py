@@ -90,6 +90,7 @@ class LXBATCHCommandBuilder(CommandBuilder):
       infile += 'echo $pwd\n'
       infile += 'cd '+cmsswbase+'/src\n'
       infile += 'eval `scram runtime -sh`\n'
+      infile += 'source Rivet/rivetSetup.sh\n'
       infile += 'cd '+fulldir+'\n'
       infile += 'cmsRun ' + self._configfile + ' >& log_GEN_'+self._name+"_"+self._yodaout.strip(".yoda")+'.txt\n' #changed &> to >&
       infile += 'ls\n'

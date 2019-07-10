@@ -141,7 +141,7 @@ process.load('GeneratorInterface.RivetInterface.rivetAnalyzer_cfi')
 
 def customise(process):
 	process.load('GeneratorInterface.RivetInterface.rivetAnalyzer_cfi')
-        process.rivetAnalyzer.AnalysisNames = cms.vstring('CMS_2017_PAS_TOP_17_013')
+        process.rivetAnalyzer.AnalysisNames = cms.vstring('CMS_2018_I1690148')
 	process.rivetAnalyzer.CrossSection = cms.double(1.0)
         process.rivetAnalyzer.OutputFile = cms.string('TTbar-13TeV.yoda')
 	process.generation_step+=process.rivetAnalyzer

@@ -7,7 +7,7 @@ for f in files:
  for l in inf.readlines():
    split=l.split("	")
    if "YODA_SCATTER2D" in l: correct=False
-   if "CMS_2018_SMP_16_010" in l: correct=True
+   if "CMS_2018_I1682495" in l: correct=True
    if len(split)==6 and not "val" in l and correct:
      #if "5.000000e-01	5.000000e-01	5.000000e-01" in l: continue
      #if "3.000000e+00	2.000000e+00	2.000000e+00" in l: continue

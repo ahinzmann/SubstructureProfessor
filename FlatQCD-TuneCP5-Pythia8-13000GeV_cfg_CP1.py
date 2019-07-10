@@ -136,7 +136,7 @@ process.load('GeneratorInterface.RivetInterface.rivetAnalyzer_cfi')
 
 def customise(process):
 	process.load('GeneratorInterface.RivetInterface.rivetAnalyzer_cfi')
-        process.rivetAnalyzer.AnalysisNames = cms.vstring('CMS_2018_SMP_16_010','CMS_2016_I1459051')
+        process.rivetAnalyzer.AnalysisNames = cms.vstring('CMS_2018_I1682495','CMS_2016_I1459051')
 	process.rivetAnalyzer.CrossSection = cms.double(1.0)
         process.rivetAnalyzer.OutputFile = cms.string('QCD-13TeV.yoda')
 	process.rivetAnalyzer.UseExternalWeight = cms.bool(True)

@@ -30,6 +30,8 @@ if analyseOutput:
   #print "sed -i -e 's/2.5.2\"/2.5.2-njopjo\"/g' /afs/cern.ch/user/h/hinzmann/stable_13TeV/Rivet/CMSSW_9_2_6/config/toolbox/slc6_amd64_gcc530/tools/selected/rivet.xml"
   #print "scram setup rivet"
   print "ln -s ../GeneratorInterface/RivetInterface/data ref"
+  print "export RIVET_DATA_PATH=/afs/cern.ch/user/h/hinzmann/stable_13TeV/Rivet100/CMSSW_10_0_0/src/SubstructureProfessor/ref"
+
   for tune,number in scenarios:
     name=tune+version
     print "prof-runcombs --mc mcruns_"+name+"/mc -c 0:1 -o runcombs_"+name+".dat --weights "+weights
@@ -63,7 +65,6 @@ if analyseOutput:
   print "prof-ipolhistos --datadir . --runs runcombs_A14-CR1.dat --mcdir mcruns_A14-CR1/mc --weights "+weights+" --ipol=linear --ipoldir=out_A14-CR1"+weights.replace("weights","")+"/ipol/ --outdir=out_A14-CR1"+weights.replace("weights","")+" --params=ColourReconnection:mode=1"
   print "prof-ipolhistos --datadir . --runs runcombs_A14-CR2.dat --mcdir mcruns_A14-CR2/mc --weights "+weights+" --ipol=linear --ipoldir=out_A14-CR2"+weights.replace("weights","")+"/ipol/ --outdir=out_A14-CR2"+weights.replace("weights","")+" --params=ColourReconnection:mode=2"
   print "prof-ipolhistos --datadir . --runs runcombs_default.dat --mcdir mcruns_default/mc --weights "+weights+" --ipol=linear --ipoldir=out_default"+weights.replace("weights","")+"/ipol/ --outdir=out_default"+weights.replace("weights","")+" --params=ColourReconnection:mode=0"
-  print "export RIVET_DATA_PATH=/afs/cern.ch/user/h/hinzmann/stable_13TeV/Rivet/CMSSW_9_2_6/src/Professor/ref"
   print "python renormalize.py out_CP1"+weights.replace("weights","")+"/ipolhistos/000/histo-000.yoda"
   print "python renormalize.py out_CP5"+weights.replace("weights","")+"/ipolhistos/000/histo-000.yoda"
   print "python renormalize.py out_CP5-CR1"+weights.replace("weights","")+"/ipolhistos/000/histo-000.yoda"

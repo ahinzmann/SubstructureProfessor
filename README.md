@@ -52,4 +52,8 @@ analyse.py
 
 # Rivet plugins
 
-For CMS jet charge, merge this into your fork: https://gitlab.cern.ch/hinzmann/Rivet/compare/master...SMP15003_datafix
+For CMS jet charge, merge this into your fork:
+
+https://gitlab.cern.ch/hinzmann/Rivet/compare/master...SMP15003_datafix
+
+https://gitlab.cern.ch/hinzmann/Rivet/compare/master...CMS-QCD-10-029

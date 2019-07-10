@@ -42,7 +42,13 @@ git clone git@github.com:ahinzmann/SubstructureProfessor.git
 
 cd SubstructureProfessor
 
-Adjust and run submitJobs.py to get the commands for tunings and comparisons
+To get the commands for tunings and comparisons, adjust and run:
+
+submitJobsPythia8.py
+
+submitJobsHerwig7.py
+
+analyse.py
 
 # Rivet plugins
 

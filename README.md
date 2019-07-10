@@ -1,7 +1,9 @@
 # SubstructureProfessor
 
 The following instructions are based on:
+
 https://twiki.cern.ch/twiki/bin/viewauth/CMS/Rivet
+
 https://twiki.cern.ch/twiki/bin/view/CMS/ProfessorTutorialForTuning
 
 Setup your own fork of the Rivet GitLab repository:
@@ -27,6 +29,8 @@ git-cms-addpkg GeneratorInterface/RivetInterface
 git-cms-addpkg Configuration/Generator
 
 kinit ${USER}@CERN.CH
+
+git config --global http.emptyAuth true 
 
 git clone https://:@gitlab.cern.ch:8443/${USER}/Rivet.git
 

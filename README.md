@@ -55,5 +55,3 @@ analyse.py
 For CMS jet charge, merge this into your fork:
 
 https://gitlab.cern.ch/hinzmann/Rivet/compare/master...SMP15003_datafix
-
-https://gitlab.cern.ch/hinzmann/Rivet/compare/master...CMS-QCD-10-029

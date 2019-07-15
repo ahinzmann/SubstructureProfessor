@@ -14,7 +14,7 @@ scenarios=[#("CP1",2),
 	   ("default",2),
 	   ]
 	   
-doYoda=True
+doYoda=False
 analyseOutput=True
 
 version=""
@@ -29,8 +29,9 @@ if doYoda:
 if analyseOutput:
   #print "sed -i -e 's/2.5.2\"/2.5.2-njopjo\"/g' /afs/cern.ch/user/h/hinzmann/stable_13TeV/Rivet/CMSSW_9_2_6/config/toolbox/slc6_amd64_gcc530/tools/selected/rivet.xml"
   #print "scram setup rivet"
+  print "source rivetSetup.sh"
   print "ln -s ../GeneratorInterface/RivetInterface/data ref"
-  print "export RIVET_DATA_PATH=/afs/cern.ch/user/h/hinzmann/stable_13TeV/Rivet100/CMSSW_10_0_0/src/SubstructureProfessor/ref"
+  print "export RIVET_DATA_PATH=/afs/cern.ch/user/h/hinzmann/stable_13TeV/Rivet100/CMSSW_10_0_0/src/SubstructureProfessor/ref:/cvmfs/cms.cern.ch/slc7_amd64_gcc630/external/rivet/2.5.4-cms/share/Rivet/"
 
   for tune,number in scenarios:
     name=tune+version

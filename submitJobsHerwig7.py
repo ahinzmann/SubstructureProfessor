@@ -3,15 +3,14 @@ scenarios=[("default",2),
 	   ]
 	   
 version=""
-weights="weightsSelected"
 
 if True:
   for tune,number in scenarios:
     name=tune+version
-    if name=="FSR" or "All" in name:
-      scan=""
+    if number>2:
+      scan="" # Sample the phase space of parameters
     else:
-      scan="--scan"
+      scan="--scan" # Compute parameter on/off
     print "prof-sampleparams generatorH7"+tune+".ranges "+scan+" --include-corners --num-runs "+str(number)+" --seed 1 -o mcruns_"+name+\
       " -T FlatQCD-Herwig7-8000GeV_cfg_"+tune+".py"+\
       " -T FlatQCD-Herwig7-7000GeV_cfg_"+tune+".py"+\

@@ -15,17 +15,16 @@ scenarios=[#("CP1",2),
 	   
 
 version=""
-weights="weightsSelected"
 
 if True:
   #print "sed -i -e 's/2.5.2-njopjo\"/2.5.2\"/g' /afs/cern.ch/user/h/hinzmann/stable_13TeV/Rivet/CMSSW_9_2_6/config/toolbox/slc6_amd64_gcc530/tools/selected/rivet.xml"
   #print "scram setup rivet"
   for tune,number in scenarios:
     name=tune+version
-    if name=="FSR" or "All" in name:
-      scan=""
+    if number>2:
+      scan="" # Sample the phase space of parameters
     else:
-      scan="--scan"
+      scan="--scan" # Compute parameter on/off
     print "prof-sampleparams generatorP8"+tune+".ranges "+scan+" --include-corners --num-runs "+str(number)+" --seed 1 -o mcruns_"+name+\
       " -T FlatQCD-TuneCP5-Pythia8-8000GeV_cfg_"+tune+".py"+\
       " -T FlatQCD-TuneCP5-Pythia8-7000GeV_cfg_"+tune+".py"+\

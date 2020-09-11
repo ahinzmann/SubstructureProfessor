@@ -10,11 +10,11 @@ rivet-mkhtml -o rivet_plots_all/DIJET_Sep10 -c ../../Rivet/SMP/data/CMS_2018_PAS
 `## 2016 data, selection/trigger similar to the analysis` \
 ../../Rivet/SMP/data/CMS_2018_PAS_SMP_18_QGX_DIJET.yoda:'Title=Unfolded data':'ErrorBands=1' \
 `## MY ANALYSIS` \
-batch_yoda_files/$FILENAME1/$FILENAME1.yoda:'Title=Pythia8.243 CP5':'ErrorBars=1' \
-batch_yoda_files/$FILENAME2/$FILENAME2.yoda:'Title=Herwig7.20 CH3':'ErrorBars=1' \
-batch_yoda_files/$FILENAME3/$FILENAME3.yoda:'Title=Sherpa 2.2.10':'ErrorBars=1' \
-`##batch_yoda_files/$FILENAME4/$FILENAME4.yoda:'Title=P8 mMDT (E for thrust, WTA else)':'ErrorBars=1'` \
-`##batch_yoda_files/$FILENAME5/$FILENAME5.yoda:'Title=P8 CR0 DIJET $\alpha_{S}=0.136$':'ErrorBars=1'`
+$FILENAME1.yoda:'Title=Pythia8.243 CP5':'ErrorBars=1' \
+$FILENAME2.yoda:'Title=Herwig7.20 CH3':'ErrorBars=1' \
+$FILENAME3.yoda:'Title=Sherpa 2.2.10':'ErrorBars=1' \
+`##$FILENAME4.yoda:'Title=P8 mMDT (E for thrust, WTA else)':'ErrorBars=1'` \
+`##$FILENAME5.yoda:'Title=P8 CR0 DIJET $\alpha_{S}=0.136$':'ErrorBars=1'`
 }
 
 YELLOW='\033[1;33m'

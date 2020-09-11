@@ -7,11 +7,11 @@ FILENAME3=P8_CR2_UE_AlphaS_0123
 ##FILENAME4=P8_CR0_UE_all4AlphaS_0123
 ##FILENAME5=P8_CR0_UE_all4AlphaS_0136
 rivet-mkhtml -o rivet_plots_all/P8_CRs_UE_AlphaS_0123 -s \
-batch_yoda_files/$FILENAME1/$FILENAME1.yoda:'Title=P8 CR0 $\alpha_{S} = 0.123$':'ErrorBars=1':'PolyMarker=' \
-batch_yoda_files/$FILENAME2/$FILENAME2.yoda:'Title=P8 CR1 $\alpha_{S} = 0.123$':'ErrorBars=1':'PolyMarker=' \
-batch_yoda_files/$FILENAME3/$FILENAME3.yoda:'Title=P8 CR2 $\alpha_{S} = 0.123$':'ErrorBars=1':'PolyMarker=' \
-`##batch_yoda_files/$FILENAME4/$FILENAME4.yoda:'Title=P8 CR0 $\alpha_{S,all} = 0.123$':'ErrorBars=1':'PolyMarker='` \
-`##batch_yoda_files/$FILENAME5/$FILENAME5.yoda:'Title=P8 CR0 $\alpha_{S,all} = 0.136$':'ErrorBars=1':'PolyMarker='`
+$FILENAME1.yoda:'Title=P8 CR0 $\alpha_{S} = 0.123$':'ErrorBars=1':'PolyMarker=' \
+$FILENAME2.yoda:'Title=P8 CR1 $\alpha_{S} = 0.123$':'ErrorBars=1':'PolyMarker=' \
+$FILENAME3.yoda:'Title=P8 CR2 $\alpha_{S} = 0.123$':'ErrorBars=1':'PolyMarker=' \
+`##$FILENAME4.yoda:'Title=P8 CR0 $\alpha_{S,all} = 0.123$':'ErrorBars=1':'PolyMarker='` \
+`##$FILENAME5.yoda:'Title=P8 CR0 $\alpha_{S,all} = 0.136$':'ErrorBars=1':'PolyMarker='`
 }
 
 YELLOW='\033[1;33m'

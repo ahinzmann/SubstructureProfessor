@@ -100,7 +100,7 @@ herwig7CH3SettingsBlock = cms.PSet(
         ),
     herwig7CH3AlphaS = cms.vstring(
         'cd /Herwig/Shower',
-        'set AlphaQCD:AlphaMZ 0.136',
+        'set AlphaQCD:AlphaMZ 0.118',
         'cd /'
         ),
     herwig7CH3MPISettings = cms.vstring(

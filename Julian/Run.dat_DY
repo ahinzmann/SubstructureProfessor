@@ -16,16 +16,15 @@
 
 (processes){
   Process 93 93 -> 13 -13 93{1}
-  Enhance_Function VAR{PPerp2(p[4])} {3}
+  Enhance_Function VAR{pow(PPerp(p[4])-15.,2)} {3}
   Order (*,2);
   CKKW sqr(20/E_CMS)
-  Integration_Error 0.01 {3};
   End process;
 }(processes)
 
 (selector){
   # Set cuts
-  PT 93 15 7000
+  PT 93 20 7000
   # Sherpa allows to bound the dilepton mass; use rather large window (RIVET does the rest)
   Mass 13 -13 60. E_CMS
 }(selector)

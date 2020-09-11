@@ -100,7 +100,7 @@ herwig7CH3SettingsBlock = cms.PSet(
         ),
     herwig7CH3AlphaS = cms.vstring(
         'cd /Herwig/Shower',
-        'set AlphaQCD:AlphaMZ 0.136',
+        'set AlphaQCD:AlphaMZ 0.118',
         'cd /'
         ),
     herwig7CH3MPISettings = cms.vstring(
@@ -141,7 +141,7 @@ process.generator = cms.EDFilter("Herwig7GeneratorFilter",
         ## ZPJ
         'set /Herwig/Cuts/LeptonPairMassCut:MinMass 60.*GeV',
         ## ZPJ ends
-        'set /Herwig/Cuts/JetKtCut:MinKT 15.*GeV',
+        'set /Herwig/Cuts/JetKtCut:MinKT 20.*GeV',
         'set /Herwig/Cuts/JetKtCut:MaxKT 7000.*GeV',
         'set /Herwig/Cuts/Cuts:MHatMin  0.0*GeV',
         'set /Herwig/Cuts/Cuts:X1Min    1e-07',

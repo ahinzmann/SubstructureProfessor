@@ -10,9 +10,9 @@ rivet-mkhtml -o rivet_plots_all/ZPJ_Sep10 -c ../../Rivet/SMP/data/CMS_2018_PAS_S
 `## 2016 data, selection/trigger similar to the analysis` \
 ../../Rivet/SMP/data/CMS_2018_PAS_SMP_18_QGX_ZPJ.yoda:'Title=Unfolded data':'ErrorBands=1' \
 `## MY ANALYSIS` \
-$FILENAME1.yoda:'Title=Pythia8.243 CP5':'ErrorBars=1' \
-$FILENAME2.yoda:'Title=Herwig7.20 CH3':'ErrorBars=1' \
-$FILENAME3.yoda:'Title=Sherpa 2.2.10':'ErrorBars=1' \
+yoda_files/$FILENAME1.yoda:'Title=Pythia8.243 CP5':'ErrorBars=1' \
+yoda_files/$FILENAME2.yoda:'Title=Herwig7.20 CH3':'ErrorBars=1' \
+yoda_files/$FILENAME3.yoda:'Title=Sherpa 2.2.10':'ErrorBars=1' \
 `##$FILENAME4.yoda:'Title=P8 mMDT (E for thrust, WTA else)':'ErrorBars=1'` \
 `##$FILENAME5.yoda:'Title=P8 CR0 DIJET $\alpha_{S}=0.136$':'ErrorBars=1'`
 }

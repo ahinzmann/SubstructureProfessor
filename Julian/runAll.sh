@@ -22,12 +22,12 @@ mv batch_yoda_files/DY_Sherpa_Sep10/* /nfs/dust/cms/user/hinzmann/batch_yoda_fil
 mv batch_yoda_files/DY_Pythia8_CP5_Sep10/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Pythia8_CP5_Sep10/ &
 mv batch_yoda_files/DY_Herwig7_CH3_Sep10/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Herwig7_CH3_Sep10/ &
 
-yodamerge -o DY_Pythia8_CP5_Sep10.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Pythia8_CP5_Sep10/job_* &
-yodamerge -o DY_Herwig7_CH3_Sep10.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Herwig7_CH3_Sep10/job_* &
-yodamerge -o DY_Sherpa_Sep10.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_Sep10/job_* &
-yodamerge -o QCD_Pythia8_CP5_Sep10.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Pythia8_CP5_Sep10/job_* &
-yodamerge -o QCD_Herwig7_CH3_Sep10.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Herwig7_CH3_Sep10/job_* &
-yodamerge -o QCD_Sherpa_Sep10.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_Sep10/job_*
+yodamerge -o yoda_files/DY_Pythia8_CP5_Sep10.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Pythia8_CP5_Sep10/job_* &
+yodamerge -o yoda_files/DY_Herwig7_CH3_Sep10.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Herwig7_CH3_Sep10/job_* &
+yodamerge -o yoda_files/DY_Sherpa_Sep10.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_Sep10/job_* &
+yodamerge -o yoda_files/QCD_Pythia8_CP5_Sep10.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Pythia8_CP5_Sep10/job_* &
+yodamerge -o yoda_files/QCD_Herwig7_CH3_Sep10.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Herwig7_CH3_Sep10/job_* &
+yodamerge -o yoda_files/QCD_Sherpa_Sep10.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_Sep10/job_*
 
 ## Plotting
 ./comparePlotsDY.sh &

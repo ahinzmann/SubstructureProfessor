@@ -222,7 +222,7 @@ process.rivetAnalyzer.AnalysisNames = cms.vstring('CMS_2018_PAS_SMP_18_QGX_ZPJ')
 ## Underlying events
 ## CMS_Internal_FSQ_15_007','CMS_FSQ_15_008','CMS_2015_I1384119','ATLAS_2016_I1419652','CMS_FSQ_15_005','CMS_FSQ_15_006
 
-process.rivetAnalyzer.OutputFile = cms.string('DY_Herwig7_CH3_Sep10.yoda')
+process.rivetAnalyzer.OutputFile = cms.string('DY_Herwig7_CH3_Oct7.yoda')
 
 # End of customisation functions
 

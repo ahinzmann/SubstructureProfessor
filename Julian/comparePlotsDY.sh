@@ -1,12 +1,12 @@
 #!/bin/bash
 
 function comparePlots {
-FILENAME1=DY_Pythia8_CP5_Sep10
-FILENAME2=DY_Herwig7_CH3_Sep10
-FILENAME3=DY_Sherpa_Sep10
+FILENAME1=DY_Pythia8_CP5_Oct7
+FILENAME2=DY_Herwig7_CH3_Oct7
+FILENAME3=DY_Sherpa_Oct7
 #FILENAME4=P8_CP5_DIJET_AlphaS_0118_Gregory_mmdt_Sep8
 ##FILENAME5=P8_CR0_DIJET_AlphaS_0136
-rivet-mkhtml -o rivet_plots_all/ZPJ_Sep10 -c ../../Rivet/SMP/data/CMS_2018_PAS_SMP_18_QGX_ZPJ.plot \
+rivet-mkhtml -o rivet_plots_all/ZPJ_Oct7 -c ../../Rivet/SMP/data/CMS_2018_PAS_SMP_18_QGX_ZPJ.plot \
 `## 2016 data, selection/trigger similar to the analysis` \
 ../../Rivet/SMP/data/CMS_2018_PAS_SMP_18_QGX_ZPJ.yoda:'Title=Unfolded data':'ErrorBands=1' \
 `## MY ANALYSIS` \

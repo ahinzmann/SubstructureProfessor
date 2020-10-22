@@ -183,7 +183,7 @@ def customise(process):
 ##  0.118      0.113      0.123      0.100      0.136
 ##  7.842e+10  7.842e+10  7.842e+10  7.842e+10  7.842e+10
 
-        process.rivetAnalyzer.OutputFile = cms.string('QCD_Sherpa_Sep10.yoda')
+        process.rivetAnalyzer.OutputFile = cms.string('QCD_Sherpa_Oct22.yoda')
 	process.rivetAnalyzer.UseExternalWeight = cms.bool(True)
 	process.rivetAnalyzer.useGENweights = cms.bool(True)
 	process.generation_step+=process.rivetAnalyzer

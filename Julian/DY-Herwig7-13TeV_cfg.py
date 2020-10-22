@@ -71,77 +71,33 @@ process.genstepfilter.triggerConditions=cms.vstring("generation_step")
 from Configuration.AlCa.GlobalTag import GlobalTag
 process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:mc', '')
 
-herwig7CH3SettingsBlock = cms.PSet(
-    herwig7CH3PDF = cms.vstring(
-            'cd /Herwig/Partons',
-            'create ThePEG::LHAPDF PDFSet_nnlo ThePEGLHAPDF.so',
-            'set PDFSet_nnlo:PDFName NNPDF31_nnlo_as_0118.LHgrid',
-            'set PDFSet_nnlo:RemnantHandler HadronRemnants',
-            'set /Herwig/Particles/p+:PDF PDFSet_nnlo',
-            'set /Herwig/Particles/pbar-:PDF PDFSet_nnlo',
-
-            'set /Herwig/Partons/PPExtractor:FirstPDF  PDFSet_nnlo',
-            'set /Herwig/Partons/PPExtractor:SecondPDF PDFSet_nnlo',
-
-            'set /Herwig/Shower/ShowerHandler:PDFA PDFSet_nnlo',
-            'set /Herwig/Shower/ShowerHandler:PDFB PDFSet_nnlo',
-            
-            'create ThePEG::LHAPDF PDFSet_lo ThePEGLHAPDF.so',
-            ## difference to CH2
-            'set PDFSet_lo:PDFName NNPDF31_lo_as_0130.LHgrid',
-            'set PDFSet_lo:RemnantHandler HadronRemnants',
-
-            'set /Herwig/Shower/ShowerHandler:PDFARemnant PDFSet_lo',
-            'set /Herwig/Shower/ShowerHandler:PDFBRemnant PDFSet_lo',
-            'set /Herwig/Partons/MPIExtractor:FirstPDF PDFSet_lo',
-            'set /Herwig/Partons/MPIExtractor:SecondPDF PDFSet_lo',
-
-            'cd /',
-        ),
-    herwig7CH3AlphaS = cms.vstring(
-        'cd /Herwig/Shower',
-        'set AlphaQCD:AlphaMZ 0.118',
-        'cd /'
-        ),
-    herwig7CH3MPISettings = cms.vstring(
-        'read snippets/SoftModel.in',
-        ## difference to CH2
-        'set /Herwig/Hadronization/ColourReconnector:ReconnectionProbability 0.4712',
-        'set /Herwig/UnderlyingEvent/MPIHandler:pTmin0 3.04',
-        'set /Herwig/UnderlyingEvent/MPIHandler:InvRadius 1.284',
-        'set /Herwig/UnderlyingEvent/MPIHandler:Power 0.1362',
-        'set /Herwig/Partons/RemnantDecayer:ladderPower -0.08',
-        'set /Herwig/Partons/RemnantDecayer:ladderNorm 0.95',
-                                )
-)
-
 # from Configuration.Generator.Herwig7Settings.Herwig7CH2TuneSettings_cfi import herwig7CH2SettingsBlock
 process.generator = cms.EDFilter("Herwig7GeneratorFilter",
     herwig7CH3SettingsBlock,
     productionParameters = cms.vstring(
         'read snippets/PPCollider.in',
         ## UE
-        #'read snippets/MB.in',
-        #'read snippets/Diffraction.in',
+        # 'read snippets/MB.in',
+        # 'read snippets/Diffraction.in',
         ## UE ends
         'mkdir /Herwig/Weights',
         'cd /Herwig/Weights',
         'create ThePEG::ReweightMinPT reweightMinPT ReweightMinPT.so',
         'cd /Herwig/MatrixElements/',
         ## DIJET
-        'insert SubProcess:MatrixElements[0] MEQCD2to2',
-        'insert SubProcess:Preweights[0] /Herwig/Weights/reweightMinPT',
+        # 'insert SubProcess:MatrixElements[0] MEQCD2to2',
+        # 'insert SubProcess:Preweights[0] /Herwig/Weights/reweightMinPT',
         ## DIJET ends
         ## ZPJ
-        # 'insert SubProcess:MatrixElements[0] MEZJet',
-        # 'DISABLEREADONLY',
-        # 'newdef MEZJet:ZDecay ChargedLeptons',
+        'insert SubProcess:MatrixElements[0] MEZJet',
+        'DISABLEREADONLY',
+        'newdef MEZJet:ZDecay ChargedLeptons',
         ## ZPJ ends
         'cd /',
         ## ZPJ
-        # 'set /Herwig/Cuts/LeptonPairMassCut:MinMass 60.*GeV',
+        'set /Herwig/Cuts/LeptonPairMassCut:MinMass 60.*GeV',
         ## ZPJ ends
-        'set /Herwig/Cuts/JetKtCut:MinKT 15.*GeV',
+        'set /Herwig/Cuts/JetKtCut:MinKT 20.*GeV',
         'set /Herwig/Cuts/JetKtCut:MaxKT 7000.*GeV',
         'set /Herwig/Cuts/Cuts:MHatMin  0.0*GeV',
         'set /Herwig/Cuts/Cuts:X1Min    1e-07',
@@ -152,7 +108,7 @@ process.generator = cms.EDFilter("Herwig7GeneratorFilter",
         'set /Herwig/Decays/DecayHandler:MaxLifeTime 10*mm',
         'set /Herwig/Decays/DecayHandler:LifeTimeOption Average'
     ),
-    parameterSets = cms.vstring('productionParameters', 'herwig7CH3PDF','herwig7CH3AlphaS', 'herwig7CH3MPISettings'),
+    parameterSets = cms.vstring('productionParameters'),
     configFiles = cms.vstring(),
     crossSection = cms.untracked.double(1363000000),
     dataLocation = cms.string('${HERWIGPATH:-6}'),
@@ -193,7 +149,7 @@ process.load('GeneratorInterface.RivetInterface.rivetAnalyzer_cfi')
 process.generation_step += process.rivetAnalyzer
 process.schedule.remove(process.RAWSIMoutput_step)
 
-process.rivetAnalyzer.CrossSection = cms.double(1.328e+09)
+process.rivetAnalyzer.CrossSection = cms.double(1.582e+03)
 
 ## DIJET
 ## AlphaQCD:AlphaMZ
@@ -214,7 +170,7 @@ process.rivetAnalyzer.UseExternalWeight = cms.bool(True)  # for weighted events
 process.rivetAnalyzer.useGENweights = cms.bool(True)
 process.rivetAnalyzer.useLHEweights = cms.bool(False)  # doesn't matter as no separate LHE generator
 
-process.rivetAnalyzer.AnalysisNames = cms.vstring('CMS_2018_PAS_SMP_18_QGX_DIJET')
+process.rivetAnalyzer.AnalysisNames = cms.vstring('CMS_2018_PAS_SMP_18_QGX_ZPJ')
 
 ## Substructure
 ## CMS_2018_PAS_SMP_18_QGX_ZPJ
@@ -222,7 +178,7 @@ process.rivetAnalyzer.AnalysisNames = cms.vstring('CMS_2018_PAS_SMP_18_QGX_DIJET
 ## Underlying events
 ## CMS_Internal_FSQ_15_007','CMS_FSQ_15_008','CMS_2015_I1384119','ATLAS_2016_I1419652','CMS_FSQ_15_005','CMS_FSQ_15_006
 
-process.rivetAnalyzer.OutputFile = cms.string('QCD_Herwig7_CH3_Oct22.yoda')
+process.rivetAnalyzer.OutputFile = cms.string('DY_Herwig7_Oct22.yoda')
 
 # End of customisation functions
 

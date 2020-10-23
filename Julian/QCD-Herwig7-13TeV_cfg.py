@@ -73,7 +73,6 @@ process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:mc', '')
 
 # from Configuration.Generator.Herwig7Settings.Herwig7CH2TuneSettings_cfi import herwig7CH2SettingsBlock
 process.generator = cms.EDFilter("Herwig7GeneratorFilter",
-    herwig7CH3SettingsBlock,
     productionParameters = cms.vstring(
         'read snippets/PPCollider.in',
         ## UE

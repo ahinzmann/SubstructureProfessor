@@ -41,7 +41,7 @@
 
 (processes){
   Process 93 93 -> 93 93;
-  Enhance_Function VAR{pow(PPerp(p[3])-15.,4.5)} {2}
+  %Enhance_Function VAR{pow(PPerp(p[3])-15.,4.5)} {2}
   Order (*,0); 
   NLO_QCD_Mode MC@NLO;
   ME_Generator Amegic;

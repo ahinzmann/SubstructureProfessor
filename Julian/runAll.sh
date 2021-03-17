@@ -20,6 +20,23 @@
 cp *MASTER.tgz /afs/desy.de/user/h/hinzmann/public/
 
 ## Generation
+mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Pythia8_CP5_Mar16/ &
+mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Herwig7_Mar16/ &
+mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_Mar16/ &
+mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Pythia8_CP5_Mar16/ &
+mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Herwig7_Mar16/ &
+mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_Mar16/ &
+mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Herwig7_CH3_Mar16/ &
+mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Herwig7_CH3_Mar16/ &
+mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_LO_Mar16/ &
+mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_NLO_Mar16/ &
+mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_NLOM_Mar16/ &
+mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_LO_Mar16/ &
+mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_NLO_Mar16/ &
+mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_NLOM_Mar16/ &
+mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Pythia8_CP2_Mar16/ &
+mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Pythia8_CP2_Mar16/ &
+
 /afs/desy.de/user/h/hinzmann/grid-control/grid-control/go.py DY-Pythia8-CP5-13TeV.conf &
 /afs/desy.de/user/h/hinzmann/grid-control/grid-control/go.py DY-Herwig7-13TeV.conf &
 /afs/desy.de/user/h/hinzmann/grid-control/grid-control/go.py DY-Sherpa-13TeV.conf &
@@ -37,56 +54,22 @@ cp *MASTER.tgz /afs/desy.de/user/h/hinzmann/public/
 /afs/desy.de/user/h/hinzmann/grid-control/grid-control/go.py DY-Pythia8-CP2-13TeV.conf &
 /afs/desy.de/user/h/hinzmann/grid-control/grid-control/go.py QCD-Pythia8-CP2-13TeV.conf &
 
-mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Pythia8_CP5_Nov26/ &
-mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Herwig7_Nov26/ &
-mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_Nov26/ &
-mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Pythia8_CP5_Nov26/ &
-mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Herwig7_Nov26/ &
-mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_Nov26/ &
-mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Herwig7_CH3_Nov26/ &
-mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Herwig7_CH3_Nov26/ &
-mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_LO_Nov26/ &
-mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_NLO_Nov26/ &
-mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_NLOM_Nov26/ &
-mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_LO_Nov26/ &
-mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_NLO_Nov26/ &
-mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_NLOM_Nov26/ &
-mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Pythia8_CP2_Nov26/ &
-mkdir /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Pythia8_CP2_Nov26/ &
-
-mv batch_yoda_files/DY_Pythia8_CP5_Nov26/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Pythia8_CP5_Nov26/ &
-mv batch_yoda_files/DY_Herwig7_Nov26/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Herwig7_Nov26/ &
-mv batch_yoda_files/DY_Sherpa_Nov26/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_Nov26/ &
-mv batch_yoda_files/QCD_Pythia8_CP5_Nov26/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Pythia8_CP5_Nov26/ &
-mv batch_yoda_files/QCD_Herwig7_Nov26/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Herwig7_Nov26/ &
-mv batch_yoda_files/QCD_Sherpa_Nov26/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_Nov26/ &
-mv batch_yoda_files/DY_Herwig7_CH3_Nov26/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Herwig7_CH3_Nov26/ &
-mv batch_yoda_files/QCD_Herwig7_CH3_Nov26/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Herwig7_CH3_Nov26/ &
-mv batch_yoda_files/DY_Sherpa_LO_Nov26/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_LO_Nov26/ &
-mv batch_yoda_files/DY_Sherpa_NLO_Nov26/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_NLO_Nov26/ &
-mv batch_yoda_files/DY_Sherpa_NLOM_Nov26/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_NLOM_Nov26/ &
-mv batch_yoda_files/QCD_Sherpa_LO_Nov26/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_LO_Nov26/ &
-mv batch_yoda_files/QCD_Sherpa_NLO_Nov26/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_NLO_Nov26/ &
-mv batch_yoda_files/QCD_Sherpa_NLOM_Nov26/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_NLOM_Nov26/ &
-mv batch_yoda_files/DY_Pythia8_CP2_Nov26/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Pythia8_CP2_Nov26/ &
-mv batch_yoda_files/QCD_Pythia8_CP2_Nov26/* /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Pythia8_CP2_Nov26/ &
-
-yodamerge -o yoda_files/DY_Pythia8_CP5_Nov26.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Pythia8_CP5_Nov26/job_* &
-yodamerge -o yoda_files/DY_Herwig7_Nov26.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Herwig7_Nov26/job_* &
-yodamerge -o yoda_files/DY_Sherpa_Nov26.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_Nov26/job_* &
-yodamerge -o yoda_files/QCD_Pythia8_CP5_Nov26.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Pythia8_CP5_Nov26/job_* &
-yodamerge -o yoda_files/QCD_Herwig7_Nov26.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Herwig7_Nov26/job_* &
-yodamerge -o yoda_files/QCD_Sherpa_Nov26.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_Nov26/job_* &
-yodamerge -o yoda_files/DY_Herwig7_CH3_Nov26.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Herwig7_CH3_Nov26/job_* &
-yodamerge -o yoda_files/QCD_Herwig7_CH3_Nov26.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Herwig7_CH3_Nov26/job_* &
-yodamerge -o yoda_files/DY_Sherpa_LO_Nov26.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_LO_Nov26/job_* &
-yodamerge -o yoda_files/DY_Sherpa_NLO_Nov26.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_NLO_Nov26/job_* &
-yodamerge -o yoda_files/DY_Sherpa_NLOM_Nov26.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_NLOM_Nov26/job_* &
-yodamerge -o yoda_files/QCD_Sherpa_LO_Nov26.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_LO_Nov26/job_* &
-yodamerge -o yoda_files/QCD_Sherpa_NLO_Nov26.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_NLO_Nov26/job_* &
-yodamerge -o yoda_files/QCD_Sherpa_NLOM_Nov26.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_NLOM_Nov26/job_* &
-yodamerge -o yoda_files/DY_Pythia8_CP2_Nov26.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Pythia8_CP2_Nov26/job_* &
-yodamerge -o yoda_files/QCD_Pythia8_CP2_Nov26.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Pythia8_CP2_Nov26/job_* &
+yodamerge -o yoda_files/DY_Pythia8_CP5_Mar16.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Pythia8_CP5_Mar16/job_* &
+yodamerge -o yoda_files/DY_Herwig7_Mar16.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Herwig7_Mar16/job_* &
+yodamerge -o yoda_files/DY_Sherpa_Mar16.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_Mar16/job_* &
+yodamerge -o yoda_files/QCD_Pythia8_CP5_Mar16.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Pythia8_CP5_Mar16/job_* &
+yodamerge -o yoda_files/QCD_Herwig7_Mar16.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Herwig7_Mar16/job_* &
+yodamerge -o yoda_files/QCD_Sherpa_Mar16.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_Mar16/job_* &
+yodamerge -o yoda_files/DY_Herwig7_CH3_Mar16.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Herwig7_CH3_Mar16/job_* &
+yodamerge -o yoda_files/QCD_Herwig7_CH3_Mar16.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Herwig7_CH3_Mar16/job_* &
+yodamerge -o yoda_files/DY_Sherpa_LO_Mar16.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_LO_Mar16/job_* &
+yodamerge -o yoda_files/DY_Sherpa_NLO_Mar16.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_NLO_Mar16/job_* &
+yodamerge -o yoda_files/DY_Sherpa_NLOM_Mar16.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Sherpa_NLOM_Mar16/job_* &
+yodamerge -o yoda_files/QCD_Sherpa_LO_Mar16.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_LO_Mar16/job_* &
+yodamerge -o yoda_files/QCD_Sherpa_NLO_Mar16.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_NLO_Mar16/job_* &
+yodamerge -o yoda_files/QCD_Sherpa_NLOM_Mar16.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Sherpa_NLOM_Mar16/job_* &
+yodamerge -o yoda_files/DY_Pythia8_CP2_Mar16.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/DY_Pythia8_CP2_Mar16/job_* &
+yodamerge -o yoda_files/QCD_Pythia8_CP2_Mar16.yoda /nfs/dust/cms/user/hinzmann/batch_yoda_files/QCD_Pythia8_CP2_Mar16/job_* &
 
 ## Plotting
 ./comparePlotsDY.sh &

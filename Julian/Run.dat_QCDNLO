@@ -9,12 +9,14 @@
   Rjet:=0.4;
   RJsq:=Rjet*Rjet;
   
-  SCALES METS{FSF*MU_F2}{RSF*MU_R2}{RJsq*QSF*MU_Q2};
-
+  SCALES FASTJET[A:antikt,PT:25,ET:0,R:Rjet,M:0]{FSF*0.0625*H_T2}{RSF*0.0625*H_T2}{QSF*0.25*PPerp2(p[3])}
+  
   % me generator settings
-  ME_SIGNAL_GENERATOR Comix Amegic LOOPGEN;
+  ME_SIGNAL_GENERATOR Amegic LOOPGEN;
   EVENT_GENERATION_MODE Weighted;
   LOOPGEN:=OpenLoops;
+
+  MODEL SM;
 
   % collider setup
   BEAM_1 2212; BEAM_ENERGY_1 = 6500.;
@@ -41,11 +43,9 @@
 
 (processes){
   Process 93 93 -> 93 93;
-  %Enhance_Function VAR{pow(PPerp(p[3])-15.,4.5)} {2}
+  Enhance_Function VAR{pow(PPerp(p[3])-15.,4.5)} {2}
   Order (*,0); 
   NLO_QCD_Mode MC@NLO;
-  ME_Generator Amegic;
-  RS_ME_Generator Comix;
   Loop_Generator LOOPGEN;
   Integration_Error 0.02 {2};
   Integration_Error 0.02 {3};
@@ -54,7 +54,8 @@
 
 
 (selector){ 
-  FastjetFinder antikt 2 25 0.0 Rjet;
+  FastjetFinder antikt 2 15 0.0 Rjet;
+  FastjetFinder antikt 1 25 0.0 Rjet;
 }(selector)
 
 (analysis){

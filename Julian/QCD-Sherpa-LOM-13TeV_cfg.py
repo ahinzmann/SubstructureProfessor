@@ -71,9 +71,9 @@ process.generator = cms.EDFilter("SherpaGeneratorFilter",
   maxEventsToPrint = cms.int32(0),
   filterEfficiency = cms.untracked.double(1.0),
   crossSection = cms.untracked.double(-1),
-  SherpaProcess = cms.string('DYNLO'),
+  SherpaProcess = cms.string('QCDLOM'),
   SherpackLocation = cms.string('/afs/desy.de/user/h/hinzmann/public/'),
-  SherpackChecksum = cms.string('210e181d567dd686530e223f3618ee25'),
+  SherpackChecksum = cms.string('e3bd5eca220b6d9f849d101a11b37795'),
   FetchSherpack = cms.bool(True),
   SherpaPath = cms.string('./'),
   SherpaPathPiece = cms.string('./'),
@@ -84,7 +84,7 @@ process.generator = cms.EDFilter("SherpaGeneratorFilter",
                              "Run"),
                               MPI_Cross_Sections = cms.vstring(
 				" MPIs in Sherpa, Model = Amisic:",
-				" semihard xsec = 39.2692 mb,",
+				" semihard xsec = 39.5249 mb,",
 				" non-diffractive xsec = 17.0318 mb with nd factor = 0.3142."
                                                   ),
                               Run = cms.vstring(
@@ -93,28 +93,27 @@ process.generator = cms.EDFilter("SherpaGeneratorFilter",
 				" FSF:=1.; RSF:=1.; QSF:=1.;",
 				" Rjet:=0.4;",
 				" RJsq:=Rjet*Rjet;",
-				" SCALES METS{FSF*MU_F2}{RSF*MU_R2}{RJsq*QSF*MU_Q2};",
-				" ME_SIGNAL_GENERATOR Comix Amegic LOOPGEN;",
-				" OL_PREFIX=/cvmfs/cms.cern.ch/slc7_amd64_gcc700/external/openloops/2.1.0-pafccj2",
-				" EVENT_GENERATION_MODE W;",
-				" LOOPGEN:=OpenLoops;",
+				" SCALES FASTJET[A:antikt,PT:25,ET:0,R:Rjet,M:0]{FSF*0.0625*H_T2}{RSF*0.0625*H_T2}{QSF*0.25*PPerp2(p[3])}",
+				" NJET:=1; LJET:=2,3; QCUT:=30.;",
+				" ME_SIGNAL_GENERATOR Comix Amegic;",
+				" EVENT_GENERATION_MODE Weighted;",
+				" MODEL SM;",
 				" BEAM_1 2212; BEAM_ENERGY_1 = 6500.;",
 				" BEAM_2 2212; BEAM_ENERGY_2 = 6500.;",
 				" MAX_PROPER_LIFETIME = 10.0",
 				"}(run)",
 				" (processes){",
-				" Process 93 93 -> 13 -13 93;",
-				" Order (*,2);",
-				" NLO_QCD_Mode MC@NLO;",
-				" ME_Generator Amegic;",
-				" RS_ME_Generator Comix;",
-				" Loop_Generator LOOPGEN;",
+				" Process 93 93 -> 93 93 93{NJET};",
+				" Enhance_Function VAR{pow(PPerp(p[3])-15.,4.5)} {LJET}",
+				" Order (*,0); CKKW sqr(QCUT/E_CMS);",
+				" Cut_Core 1;",
+				" Integration_Error 0.02 {2};",
 				" Integration_Error 0.02 {3};",
 				" Integration_Error 0.02 {4};",
 				" End process;",
 				"}(processes)",
 				" (selector){",
-				" Mass 13 -13 70 110",
+				" FastjetFinder antikt 2 15 0.0 Rjet;",
 				" FastjetFinder antikt 1 25 0.0 Rjet;",
 				"}(selector)",
 				" (analysis){",
@@ -151,7 +150,7 @@ process.load('GeneratorInterface.RivetInterface.rivetAnalyzer_cfi')
 
 def customise(process):
 	process.load('GeneratorInterface.RivetInterface.rivetAnalyzer_cfi')
-        process.rivetAnalyzer.AnalysisNames = cms.vstring('CMS_2018_PAS_SMP_18_QGX_ZPJ')
+        process.rivetAnalyzer.AnalysisNames = cms.vstring('CMS_2018_PAS_SMP_18_QGX_DIJET')
 ## DIJET
 ## CMS_2018_PAS_SMP_18_QGX_DIJET
 ## ZPJ
@@ -192,7 +191,7 @@ def customise(process):
 ##  0.118      0.113      0.123      0.100      0.136
 ##  7.842e+10  7.842e+10  7.842e+10  7.842e+10  7.842e+10
 
-        process.rivetAnalyzer.OutputFile = cms.string('DY_Sherpa_NLO_Mar16.yoda')
+        process.rivetAnalyzer.OutputFile = cms.string('QCD_Sherpa_LOM_Mar16.yoda')
 	process.rivetAnalyzer.UseExternalWeight = cms.bool(True)
 	process.rivetAnalyzer.useGENweights = cms.bool(True)
 	process.generation_step+=process.rivetAnalyzer

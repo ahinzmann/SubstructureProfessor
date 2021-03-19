@@ -12,7 +12,7 @@
   SCALES FASTJET[A:antikt,PT:25,ET:0,R:Rjet,M:0]{FSF*0.0625*H_T2}{RSF*0.0625*H_T2}{QSF*0.25*PPerp2(p[3])}
   
   % me generator settings
-  ME_SIGNAL_GENERATOR Amegic LOOPGEN;
+  ME_SIGNAL_GENERATOR Comix Amegic LOOPGEN;
   EVENT_GENERATION_MODE Weighted;
   LOOPGEN:=OpenLoops;
 
@@ -43,9 +43,11 @@
 
 (processes){
   Process 93 93 -> 93 93;
-  Enhance_Function VAR{pow(PPerp(p[3])-15.,4.5)} {2}
+  %Enhance_Function VAR{pow(PPerp(p[3])-15.,4.5)} {2}
   Order (*,0); 
   NLO_QCD_Mode MC@NLO;
+  ME_Generator Amegic;
+  RS_ME_Generator Comix;
   Loop_Generator LOOPGEN;
   Integration_Error 0.02 {2};
   Integration_Error 0.02 {3};

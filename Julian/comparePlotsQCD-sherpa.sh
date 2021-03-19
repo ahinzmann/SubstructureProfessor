@@ -12,7 +12,7 @@ FILENAME3=QCD_Sherpa_NLO_Mar16
 `## MY ANALYSIS` \
 yoda_files/$FILENAME1.yoda:'Title=Sherpa 2.2.10 LO':'ErrorBars=1' \
 yoda_files/$FILENAME2.yoda:'Title=Shepra 2.2.10 LO+jet':'ErrorBars=1' \
-`##yoda_files/$FILENAME3.yoda:'Title=Sherpa 2.2.10 NLO':'ErrorBars=1'` \
+yoda_files/$FILENAME3.yoda:'Title=Sherpa 2.2.10 NLO':'ErrorBars=1' \
 `##$FILENAME4.yoda:'Title=P8 mMDT (E for thrust, WTA else)':'ErrorBars=1'` \
 `##$FILENAME5.yoda:'Title=P8 CR0 DIJET $\alpha_{S}=0.136$':'ErrorBars=1'`
 }

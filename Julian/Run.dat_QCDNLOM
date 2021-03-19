@@ -46,7 +46,7 @@
 
 (processes){
   Process 93 93 -> 93 93 93{NJET};
-  Enhance_Function VAR{pow(PPerp(p[3])-15.,4.5)} {LJET}
+  %Enhance_Function VAR{pow(PPerp(p[3])-15.,4.5)} {LJET}
   Order (*,0); CKKW sqr(QCUT/E_CMS);
   Cut_Core 1;
   NLO_QCD_Mode MC@NLO {LJET};
